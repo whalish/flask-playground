@@ -1,0 +1,15 @@
+{% extends "login.html" %}
+{% block styling %}
+<link rel = "stylesheet" type= "text/css" href= "{{ url_for('static',filename='register.css') }}">
+{% endblock %}
+{% block main %}
+<h1 class = "text-center">Create your account</h1>
+<div id="register">
+    <form id="info" action="/logged/" method = "POST">
+      <input type="text" name="usr" placeholder="Username"><br><br>
+      <input type="text" name="email" placeholder="Email"><br><br>
+      <input type="password" name="pass" placeholder="Password"><br><br>
+      <input id ="enter" type="submit" value="Sign up">
+    </form>
+</div>
+{% endblock %}

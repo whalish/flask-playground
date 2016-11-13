@@ -2,23 +2,11 @@ from flask import Flask, render_template, request, make_response
 app = Flask(__name__)
 
 @app.route('/')
-def student():
-   return render_template('index.html')
+def login():
+   return render_template('login.html')
 
-@app.route('/setcookie', methods = ['POST', 'GET'])
-def setcookie():
-   if request.method == 'POST':
-    user = request.form['nm']
-   
-   resp = make_response(render_template('result.html'))
-   resp.set_cookie('userID', user)
-   
-   return resp
-
-@app.route('/getcookie')
-def getcookie():
-   name = request.cookies.get('userID')
-   return '<h1>welcome '+name+'</h1>'
-
-if __name__ == '__main__':
-   app.run(debug = True)
+@app.route('logged')
+def logged():
+    username = request.form['usr']
+    return "welcome %s" % username
+@app.route

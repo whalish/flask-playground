@@ -1,0 +1,17 @@
+<link rel = "stylesheet" type= "text/css" href= "{{ url_for('static',filename='login.css') }}">
+{% block styling %}{% endblock %}
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class = "container">
+    {% block main %}
+  <h1 class = "text-center">Login</h1>
+  <div id = "login">
+    <p> Don't have an account? <a href = "/register/">sign up</a></p>
+    <form id="info" action="/logged/" method = "POST">
+      <input type="text" name="usr" placeholder="Username"><br><br>
+      <input type="password" name="pass" placeholder="Password"><br><br>
+      <input id ="enter" type="submit" value="Login">
+    </form>
+  </div>{% endblock %}
+</div>
